@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -18,8 +18,8 @@ public class CarMover : MonoBehaviour
     {
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
-        Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
-        
+        transform.position += Vector3.right * speed * Time.deltaTime * horizontalInput;
+        transform.position += Vector3.forward * speed * Time.deltaTime * verticalInput;
     }
     private void Jump()
     {
